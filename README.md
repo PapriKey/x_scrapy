@@ -6,12 +6,12 @@ There is the idea of using a personal crawler to get data.
 # Prerequisites
 * Twitter API Essential Access ([sign up here](https://t.co/signup))
 * A Project and an App created [in the dashboard](https://developer.twitter.com/en/portal/dashboard)
-* the package requirements to see the file: x_scrapy/requirements.txt
+* The package requirements to see the file: x_scrapy/requirements.txt
 ```bash
 pip install -r requirements.txt
 ```
 
-# dictionary
+# Dictionary
 ## data
 Contains data that is used in both data acquisition methods and data analysis methods.
 ## source
