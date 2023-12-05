@@ -19,3 +19,4 @@
   2. 未认证的账户只能观察到一个用户的部分follower/following信息
   3. 认证的账户是否能观察到全部的follower/following信息，也还不清楚
 * 如何定下非文本数据用于数据标注的尺度
+* 没有数据，难以完善data_collect_by_api部分的代码

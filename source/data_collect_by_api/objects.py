@@ -3,12 +3,12 @@ import os.path
 import csv
 
 from abc import ABCMeta, abstractmethod
-from source.twitter_api import get_users_with_bearer_token as user_properties
-from source.twitter_api import user_tweets as user_timelines
-from source.twitter_api import followers_lookup as user_followers
-from source.twitter_api import following_lookup as user_followings
-from source.twitter_api import user_mentions as user_mentions
-from source.twitter_api import liked_tweets as user_likes
+from source.data_collect_by_api.x_api import get_users_with_bearer_token as user_properties
+from source.data_collect_by_api.x_api import user_tweets as user_timelines
+from source.data_collect_by_api.x_api import followers_lookup as user_followers
+from source.data_collect_by_api.x_api import following_lookup as user_followings
+from source.data_collect_by_api.x_api import user_mentions as user_mentions
+from source.data_collect_by_api.x_api import liked_tweets as user_likes
 
 
 class NodeWithEdges(metaclass=ABCMeta):
@@ -27,8 +27,6 @@ class NodeWithEdges(metaclass=ABCMeta):
     @abstractmethod
     def get_relations2nodes(self):
         raise NotImplementedError("method: get_relations2nodes must be implemented")
-
-
 
 
 class Tweet(object):
@@ -68,15 +66,6 @@ class User(object, NodeWithEdges):
 
     def get_user_social_network(self):
         return self.followers, self.followings
-
-    def save_tweets_to_file(self, path):
-        # TODO: save as csv file: user, tweets, mentions, followers, followings
-        # save the user to US2020election/user.csv
-        parent_path = 'US2020election'
-        filename = os.path.join(path, parent_path, 'user.csv')
-        with open(filename, 'a', newline='', ) as f:
-            pass
-
 
     def get_edge(self):
         return [val['username'] for val in self.followers + self.followings]

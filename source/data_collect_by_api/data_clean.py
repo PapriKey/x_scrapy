@@ -10,6 +10,4 @@ def data_clean(nodes):
 
 
 def write_to_file(nodes, filepath):
-    nodes_data = [node.get_node_properties() for node in nodes]
-    nodes_other_data = [node.get_node_information() for node in nodes]
-    relations = []
+    pass
