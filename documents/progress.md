@@ -28,7 +28,8 @@
   2. retweeted (if not...support...)
   3. mention (...oppose...)
   4. liked (...support...)
-  5. name, description, location(it may or may not work)
+  5. follower/following (...homo...)
+  6. name, description, location(it may or may not work)
 
 * online social network
   1. follower
@@ -53,4 +54,5 @@
 ## idea
 * 目前遇到的主要问题，还是数据的获取方面，如果有足够的数据用作研究，那么上述问题可能会得到解决。
   1. 如标注的尺度、特征的用法，可以从足量的已标注数据的特征分布得出（这样与使用机器学习的方法有何不同？）
-  2. 
+  2. 不能获取数据，就无法进一步的实践
+  3. 现在获取到的数据进行标注的话，实际上，按照最好的情况进行估计，也不过是对P-Stance进行扩充
