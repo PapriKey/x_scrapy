@@ -31,7 +31,7 @@
   5. follower/following (...homo...)
   6. name, description, location(it may or may not work)
 
-* online social network
+* online social network(OSN)
   1. follower
   2. following (too many)
   3. retweet
@@ -56,3 +56,12 @@
   1. 如标注的尺度、特征的用法，可以从足量的已标注数据的特征分布得出（这样与使用机器学习的方法有何不同？）
   2. 不能获取数据，就无法进一步的实践
   3. 现在获取到的数据进行标注的话，实际上，按照最好的情况进行估计，也不过是对P-Stance进行扩充
+
+* 推特的API
+  1. 对于获取的推文，做了时间上的限制（最近7天）
+  2. 不提供获取用户关注、粉丝列表的权限
+  3. 不提供过滤功能
+
+* 第三方的爬虫
+  1. 只能根据关键字进行推文搜索（可能无法获取完整的社交网络）
+  2. osn只能获取follower/following
