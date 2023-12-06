@@ -20,3 +20,37 @@
   3. 认证的账户是否能观察到全部的follower/following信息，也还不清楚
 * 如何定下非文本数据用于数据标注的尺度
 * 没有数据，难以完善data_collect_by_api部分的代码
+
+# 1206
+## do
+* 整理可以用于数据标注的特征
+  1. user_timeline (recent tweets)
+  2. retweeted (if not...support...)
+  3. mention (...oppose...)
+  4. liked (...support...)
+  5. name, description, location(it may or may not work)
+
+* online social network
+  1. follower
+  2. following (too many)
+  3. retweet
+  4. liked
+  5. mention
+
+* 特征的用法
+  1. 做成统计图，用于给标注者提供信息
+  2. 用做后台打分
+  3. 用作标注质量的检测
+
+* 标注的尺度
+  1. 等待更进一步的统计研究
+
+## TODO
+* 完善数据获取的代码
+* 完善标注尺度
+* 考虑该如何获取数据
+
+## idea
+* 目前遇到的主要问题，还是数据的获取方面，如果有足够的数据用作研究，那么上述问题可能会得到解决。
+  1. 如标注的尺度、特征的用法，可以从足量的已标注数据的特征分布得出（这样与使用机器学习的方法有何不同？）
+  2. 
