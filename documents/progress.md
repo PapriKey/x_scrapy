@@ -8,7 +8,7 @@
 
 # 1205
 ## do
-* 对获取到的数据进行了分析
+* 对获取到的数据进行了分析(x_scrapy/source/data_analysis/data)
 ## idea
 * 使用BFS时，边最好使用followers。观察followers和followings统计图，
 可以发现，用户间的followers数量差距远远小于followings数量差距
@@ -45,6 +45,8 @@
 
 * 标注的尺度
   1. 等待更进一步的统计研究
+
+* 尝试了reddit的API接口
 
 ## TODO
 * 完善数据获取的代码
