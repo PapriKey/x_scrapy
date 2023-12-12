@@ -29,14 +29,6 @@ class NodeWithEdges(metaclass=ABCMeta):
         raise NotImplementedError("method: get_relations2nodes must be implemented")
 
 
-class Tweet(object):
-    def __init__(self):
-        pass
-
-    def get_post_from_remote(self):
-        pass
-
-
 class User(object, NodeWithEdges):
 
     def __init__(self, unique):
@@ -49,10 +41,9 @@ class User(object, NodeWithEdges):
         self.timelines = None
         self.followers = None
         self.followings = None
+        self.is_update = False
 
     def set_from_remote(self):
-        # TODO fix format errors of user.properties
-        # TODO modify the fields of twitter api
         self.properties = json.loads(user_properties.get_user_by_names(self.username))['data'][0]
         self.user_id = self.properties['id']
         self.timelines = user_timelines.get_tweets_by_userid(self.user_id)
@@ -61,11 +52,23 @@ class User(object, NodeWithEdges):
         self.mentions = user_mentions.get_mentions_by_userid(self.user_id)
         self.liked_tweets = user_likes.get_user_liked_tweets_by_user_id(self.user_id)
 
-    def get_user_properties(self):
-        pass
+    def get_node_properties(self):
+        return self.properties
 
-    def get_user_social_network(self):
-        return self.followers, self.followings
+    def get_node_information(self):
+        return {'user_id': self.user_id,
+                'liked_tweets': self.liked_tweets,
+                'mentions': self.mentions,
+                'timelines': self.timelines}
+
+    def get_relations2nodes(self):
+        return {
+            'user_id': self.user_id,
+            'followers': self.followers,
+            'followings': self.followings
+        }
 
     def get_edge(self):
+        if not self.is_update:
+            self.set_from_remote()
         return [val['username'] for val in self.followers + self.followings]

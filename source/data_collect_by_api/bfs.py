@@ -1,6 +1,6 @@
 import pandas
 
-from source.objects import User
+from source.data_collect_by_api.objects import User
 
 
 class BFSNode(object):
