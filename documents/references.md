@@ -29,3 +29,10 @@
 # Data collect and use
 * [TwiBot-20: A Comprehensive Twitter Bot Detection Benchmark](https://arxiv.org/pdf/2106.13088.pdf)
 * [Stance and Sentiment in Tweets](https://arxiv.org/pdf/2106.13088.pdf)
+
+# Multimodal stance detection
+* [Semantists at ImageArg-2023: Exploring Cross-modal Contrastive and Ensemble Models for Multimodal Stance and Persuasiveness Classification](https://aclanthology.org/2023.argmining-1.20/)
+* [Argumentative Stance Prediction: An Exploratory Study on Multimodality and Few-Shot Learning](https://aclanthology.org/2023.argmining-1.18/)
+* [GC-Hunter at ImageArg Shared Task: Multi-Modal Stance and Persuasiveness Learning](https://aclanthology.org/2023.argmining-1.17/)
+* [SPLIT: Stance and Persuasion Prediction with Multi-modal on Image and Textual Information](https://aclanthology.org/2023.argmining-1.19/)
+* [Identification of Multimodal Stance Towards Frames of Communication](https://aclanthology.org/2023.emnlp-main.776)
