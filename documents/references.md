@@ -18,9 +18,14 @@
 * [P-Stance: A Large Dataset for Stance Detection in Political Domain](https://aclanthology.org/2021.findings-acl.208/)
 * [tWT–WT: A Dataset to Assert the Role of Target Entities for Detecting Stance of Tweets](https://aclanthology.org/2021.naacl-main.303/)
 * [C-STANCE: A Large Dataset for Chinese Zero-Shot Stance Detection](https://aclanthology.org/2023.acl-long.747/)
+* [A Dataset for Multi-Target Stance Detection](https://aclanthology.org/E17-2088/)
 
 # Online social network
 * [Homophily, group size, and the diffusion of political information in social networks: Evidence from Twitter](https://www.sciencedirect.com/science/article/pii/S0047272716301001)
 * [Birds of a Feather Tweet Together: Integrating Network and Content Analyses to Examine Cross-Ideology Exposure on Twitter](https://academic.oup.com/jcmc/article/18/2/154/4067488)
 * [Tweeting From Left to Right: Is Online Political Communication More Than an Echo Chamber?](https://journals.sagepub.com/doi/abs/10.1177/0956797615594620)
 * [Echo Chamber or Public Sphere? Predicting Political Orientation and Measuring Political Homophily in Twitter Using Big Data](https://doi.org/10.1111/jcom.12084)
+
+# Data collect and use
+* [TwiBot-20: A Comprehensive Twitter Bot Detection Benchmark](https://arxiv.org/pdf/2106.13088.pdf)
+* [Stance and Sentiment in Tweets](https://arxiv.org/pdf/2106.13088.pdf)
