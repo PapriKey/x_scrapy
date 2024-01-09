@@ -11,7 +11,7 @@ from source.twi_bot.file_utils import read_data_from_file
 if __name__ == '__main__':
 
     params = {
-        'twi_bot_dir': ''
+        'twi_bot_dir': '/home/majun/datasets/TwiBot-22'
     }
     data_dir = '../../data/us_2020_election'
     os.makedirs(data_dir, exist_ok=True)
@@ -22,7 +22,7 @@ if __name__ == '__main__':
     osn_df = pd.concat(osn_list, axis=0)
     osn_df.to_csv(os.path.join(data_dir, 'osn.csv'), index=False)
 
-    users_in_tb = get_seed_users(related_us_2020_election=False, filename='')
+    users_in_tb = get_seed_users(related_us_2020_election=False, filename='/home/majun/datasets/TwiBot-22/user.json')
     users_in_tb = pd.DataFrame(users_in_tb)
     user_df = users_in_tb[users_in_tb['id'].isin(id_list)]
     user_df.to_csv(os.path.join(data_dir, 'user.csv'), index=False)
