@@ -21,7 +21,7 @@ def get_seed_users(filename="../data/seed_user.csv"):
     return data['account_name'].values.tolist()
 
 
-def breadth_first_search_collect(max_layer=3, get_seeds=get_seed_users, node_cls=User):
+def breadth_first_search_collect(max_layer=3, get_seeds=get_seed_users, node_cls=User, **kwargs):
     """
 
     :param max_layer:
@@ -29,13 +29,13 @@ def breadth_first_search_collect(max_layer=3, get_seeds=get_seed_users, node_cls
     :param node_cls: the class of the node
     :return:
     """
-    uniques = get_seeds()
+    uniques = get_seeds(**kwargs)
     nodes = {val: node_cls(unique=val) for val in uniques}
     s = [BFSNode(val) for val in uniques]
     while len(s) > 0:
         u = s.pop()  # a bfs-node that is not visited
         f = nodes[u.unique].get_edge()  # a set of node.unique that link with the bfs-node
-        if u.layer <= max_layer:
+        if u.layer < max_layer:
             for node_unique in f:
                 if node_unique not in nodes:
                     # TODO: determine whether an account is a robot account

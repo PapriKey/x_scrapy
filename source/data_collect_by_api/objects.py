@@ -29,7 +29,7 @@ class NodeWithEdges(metaclass=ABCMeta):
         raise NotImplementedError("method: get_relations2nodes must be implemented")
 
 
-class User(object, NodeWithEdges):
+class User(NodeWithEdges):
 
     def __init__(self, unique):
         self.unique = unique
@@ -72,3 +72,30 @@ class User(object, NodeWithEdges):
         if not self.is_update:
             self.set_from_remote()
         return [val['username'] for val in self.followers + self.followings]
+
+
+class TwiBotUsers(NodeWithEdges):
+    edges = None
+
+    def __init__(self, unique):
+        super(TwiBotUsers).__init__()
+        self.id = unique
+        self.relations = TwiBotUsers.edges[TwiBotUsers.edges['source_id'] == self.id]
+        self.edge = self.relations[self.relations['relation'] == 'followers']['target_id'].values.tolist()
+        self.edge += self.relations[self.relations['relation'] == 'following']['target_id'].values.tolist()
+
+    def get_edge(self):
+        # 目前只计算关注/粉丝网络
+        return self.edge
+
+    def get_osn(self):
+        return self.relations
+
+    def get_node_properties(self):
+        raise NotImplementedError("method: get_node_properties must be implemented")
+
+    def get_node_information(self):
+        raise NotImplementedError("method: get_node_information must be implemented")
+
+    def get_relations2nodes(self):
+        raise NotImplementedError("method: get_relations2nodes must be implemented")
