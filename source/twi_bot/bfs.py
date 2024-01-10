@@ -40,3 +40,10 @@ if __name__ == '__main__':
     print(data5.shape[0])  # 266891
     print(data5['source_id'].value_counts())  # 1173
 
+    users = read_data_from_file('../../data/us_2020_election/user_1.csv')
+    users_us = read_data_from_file('../../data/US2020election_user.csv')
+    users_us_id = users_us[users_us['username'].isin(users['username'].values)]['user_id'].values
+    tweets_us = read_data_from_file('../../data/US2020election_tweet_new.csv')
+    key_tweets = tweets_us[tweets_us['user_id'].isin(users_us_id)]
+    key_tweets.to_csv('../../data/us_2020_election/key_tweet_1.csv', index=False)
+
