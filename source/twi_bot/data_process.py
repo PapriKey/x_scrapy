@@ -33,4 +33,6 @@ def get_seed_users(related_us_2020_election=True, filename='../../data/seed_user
     return read_data_from_file(filename, **kwargs)
 
 
-
+if __name__ == '__main__':
+    seed_users = read_data_from_file('../../data/related_users_in_twi_bot.csv')
+    print(seed_users)
