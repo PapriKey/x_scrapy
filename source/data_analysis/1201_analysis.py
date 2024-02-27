@@ -139,4 +139,16 @@ def tweet_properties_analysis(filename="../../data/US2020election_tweet.csv"):
 if __name__ == "__main__":
     # user_properties_analysis()
     # user_related_tweets_analysis()
-    tweet_properties_analysis()
+    # tweet_properties_analysis()
+
+    with open('../../data/us_2020_election/degree_1.csv', 'r') as f:
+        nodes_df = pd.read_csv(f)
+
+    info = {
+        'title': 'degree_count',
+        'ylabel': 'degree',
+        'xlabel': 'percentage',
+        'savefig_path': './data/degree_count'
+    }
+
+    plot_by_percentage(nodes_df['degree'].values, **info)

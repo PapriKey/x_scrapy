@@ -10,13 +10,13 @@ from source.twi_bot.file_utils import read_data_from_file
 if __name__ == '__main__':
 
     params = {
-        'twi_bot_dir': '/home/majun/datasets/TwiBot-22'
+        'twi_bot_dir': '~'
     }
     data_dir = '../../data/us_2020_election'
     os.makedirs(data_dir, exist_ok=True)
     edges = read_data_from_file(os.path.join(params['twi_bot_dir'], 'edge.csv'))
     user_id = get_seed_users()
-    users_in_tb = get_seed_users(related_us_2020_election=False, filename='/home/majun/datasets/TwiBot-22/user.json')
+    users_in_tb = get_seed_users(related_us_2020_election=False, filename=params['twi_bot_dir'] + '/user.json')
     users_in_tb = pd.DataFrame(users_in_tb)
 
     data0 = edges[edges['source_id'].isin(user_id)]
